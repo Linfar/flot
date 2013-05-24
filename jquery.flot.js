@@ -1922,6 +1922,12 @@ Licensed under the MIT license.
                     yrange.to = yrange.axis.p2c(yrange.to);
 
                     if (xrange.from == xrange.to || yrange.from == yrange.to) {
+                        if (xrange.from == xrange.to) {
+                            xrange.from = xrange.to = Math.floor(xrange.from) + 0.5;
+                        }
+                        if (yrange.from == yrange.to) {
+                            yrange.from = yrange.to = Math.floor(yrange.from) + 0.5;
+                        }
                         // draw line
                         ctx.beginPath();
                         ctx.strokeStyle = m.color || options.grid.markingsColor;
